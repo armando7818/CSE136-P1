@@ -4,7 +4,6 @@
 	$randomNumber = rand(0,15);
 	printHelloWorldRandomColor($listOfColors[$randomNumber]);
 
-
 	function printHelloWorldRandomColor($randomColor)
 	{
 		echo "<!DOCTYPE html>
@@ -14,7 +13,6 @@
 	    	  		<title>Hello PHP Example</title>
 	    	    </head>
 	    	    <body style ='background-color:". $randomColor."'".">";
-
 		echo "<p>Hello World from PHP @ ". time() ."</p>
 		        </body>
 		    </html>";

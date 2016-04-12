@@ -1,29 +1,15 @@
 import java.io.*;
 import java.util.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
 
-public class EnvironmentVariables extends HttpServlet {
-    static LinkedHashMap<String, String> browser_vars = new LinkedHashMap<String, String>();
-    static LinkedHashMap<String, String> server_vars = new LinkedHashMap<String, String>();
-
+public class EnvironmentVariables {
     public static void main(String[] args) {
-        printHtml("Environment Variables");
-    }
-
-    public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        //browser_vars.put("AUTH_TYPE", request.getAuthType());
-        //browser_vars.put("SERVER_SOFTWARE", getServletContext().getServerInfo());
-
-        printHtml("Environment Variables");
-    }
-
-    public void doPost(HttpServletRequest request, HttpServletResponse response) {
-        //doGet(request, response);
-        printHtml("Environment Variables");
+        printHtml("Env Vars");
     }
 
     public static void printEnvironmentVariables() {
+        LinkedHashMap<String, String> browser_vars = getBrowserEnv();
+        LinkedHashMap<String, String> server_vars = getServerEnv();
+
         System.out.println("    <table>");
         System.out.println("      <tr>");
         System.out.println("        <th><b>Browser Vars</b></th>");
@@ -55,54 +41,46 @@ public class EnvironmentVariables extends HttpServlet {
 
     public static LinkedHashMap<String,String> getBrowserEnv() {
         LinkedHashMap<String,String> b = new LinkedHashMap<String,String>();
-        /*
-        b.put("CONTEXT_DOCUMENT_ROOT", System.getProperty("cgi.context_document_root"));
-        b.put("CONTEXT_PREFIX", System.getProperty("cgi.context_prefix"));
-        b.put("DOCUMENT_ROOT", System.getProperty("cgi.document_root"));
-        b.put("GATEWAY_INTERFACE", System.getProperty("cgi.gateway_interface"));
-        b.put("HTTP_ACCEPT", System.getProperty("cgi.http_accept"));
-        b.put("HTTP_ACCEPT_ENCODING", System.getProperty("cgi.http_accept_encoding"));
-        b.put("HTTP_ACCEPT_LANGUAGE", System.getProperty("cgi.http_accept_language"));
-        b.put("HTTP_CACHE_CONTROL", System.getProperty("cgi.http_cache_control"));
-        b.put("HTTP_CONNECTION", System.getProperty("cgi.http_connection"));
-        b.put("HTTP_DNT", System.getProperty("cgi.http_dnt"));
-        b.put("HTTP_HOST", System.getProperty("cgi.http_host"));
-        b.put("HTTP_USER_AGENT", System.getProperty("cgi.http_user_agent"));
-        b.put("PATH", System.getProperty("cgi.path"));
-        b.put("QUERY_STRING", System.getProperty("cgi.query_string"));
-        b.put("REMOTE_ADDR", System.getProperty("cgi.remote_addr"));
-        b.put("REMOTE_PORT", System.getProperty("cgi.remote_port"));
-        b.put("REQUEST_METHOD", System.getProperty("cgi.request_method"));
-        b.put("REQUEST_SCHEME", System.getProperty("cgi.request_scheme"));
-        b.put("REQUEST_URI", System.getProperty("cgi.request_uri"));
-        b.put("SCRIPT_FILENAME", System.getProperty("cgi.script_filename"));
-        b.put("SCRIPT_NAME", System.getProperty("cgi.script_name"));
-        b.put("SERVER_ADDR", System.getProperty("cgi.server_addr"));
-        b.put("SERVER_ADMIN", System.getProperty("cgi.server_admin"));
-        b.put("SERVER_NAME", System.getProperty("cgi.server_name"));
-        b.put("SERVER_PORT", System.getProperty("cgi.server_port"));
-        b.put("SERVER_PROTOCOL", System.getProperty("cgi.server_protocol"));
-        b.put("SERVER_SIGNATURE", System.getProperty("cgi.server_signature"));
-        b.put("SERVER_SOFTWARE", System.getProperty("cgi.server_software"));
-        */
-/*
-        Properties properties = System.getProperties();
-        Enumeration e = properties.propertyNames();
-        while(e.hasMoreElements()) {
-            String key = (String)e.nextElement();
-            b.put(key, properties.getProperty(key));
-        }
 
-*/
+        b.put("HTTP_ACCEPT", System.getProperty("http_accept"));
+        b.put("HTTP_ACCEPT_ENCODING", System.getProperty("http_accept_encoding"));
+        b.put("HTTP_ACCEPT_LANGUAGE", System.getProperty("http_accept_language"));
+        b.put("HTTP_CACHE_CONTROL", System.getProperty("http_cache_control"));
+        b.put("HTTP_CONNECTION", System.getProperty("http_connection"));
+        b.put("HTTP_DNT", System.getProperty("http_dnt"));
+        b.put("HTTP_HOST", System.getProperty("http_host"));
+        b.put("HTTP_USER_AGENT", System.getProperty("http_user_agent"));
+
+        b.put("QUERY_STRING", System.getProperty("query_string"));
+        b.put("REMOTE_ADDR", System.getProperty("remote_addr"));
+        b.put("REMOTE_PORT", System.getProperty("remote_port"));
+        b.put("REQUEST_METHOD", System.getProperty("request_method"));
+        b.put("REQUEST_SCHEME", System.getProperty("request_scheme"));
+        b.put("REQUEST_URI", System.getProperty("request_uri"));
+
         return b;
     }
 
 
     public static LinkedHashMap<String,String> getServerEnv() {
         LinkedHashMap<String,String> s = new LinkedHashMap<String,String>();
-        s.put("bbb", "zzz");
-        s.put("asdf", "qwerty");
-        s.put("aaa", "aaa");
+        s.put("CONTEXT_DOCUMENT_ROOT", System.getProperty("context_document_root"));
+        s.put("CONTEXT_PREFIX", System.getProperty("context_prefix"));
+        s.put("DOCUMENT_ROOT", System.getProperty("document_root"));
+        s.put("GATEWAY_INTERFACE", System.getProperty("gateway_interface"));
+        s.put("PATH", System.getProperty("path"));
+
+        s.put("SCRIPT_FILENAME", System.getProperty("script_filename"));
+        s.put("SCRIPT_NAME", System.getProperty("script_name"));
+
+        s.put("SERVER_ADDR", System.getProperty("server_addr"));
+        s.put("SERVER_ADMIN", System.getProperty("server_admin"));
+        s.put("SERVER_NAME", System.getProperty("server_name"));
+        s.put("SERVER_PORT", System.getProperty("server_port"));
+        s.put("SERVER_PROTOCOL", System.getProperty("server_protocol"));
+        s.put("SERVER_SIGNATURE", System.getProperty("server_signature"));
+        s.put("SERVER_SOFTWARE", System.getProperty("server_software"));
+
         return s;
     }
 

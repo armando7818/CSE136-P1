@@ -24,7 +24,7 @@ class CGIUtils {
         String buf = "";
 
         if (isGetRequest()) {
-            buf = System.getProperty("cgi.query_string");
+            buf = System.getProperty("query_string");
         } else {
             // TODO: use content-length?
             DataInput d = new DataInputStream(istream);
@@ -80,7 +80,7 @@ class CGIUtils {
 
     public static boolean isGetRequest()
     {
-        String req = System.getProperty("cgi.request_method");
+        String req = System.getProperty("request_method");
         if (req != null && (req.equals("GET") || req.equals("get"))) {
             return true;
         }
@@ -90,7 +90,7 @@ class CGIUtils {
 
     public static boolean isPostRequest()
     {
-        String req = System.getProperty("cgi.request_method");
+        String req = System.getProperty("request_method");
         if (req != null && (req.equals("POST") || req.equals("post"))) {
             return true;
         }

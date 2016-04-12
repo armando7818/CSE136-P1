@@ -1,5 +1,5 @@
 window.onload=function() {
-
+	
 	document.getElementById("postSelect").onchange=function() {
 		var language = this.value;
 		changeFormAction("postForm", language);
