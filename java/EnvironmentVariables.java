@@ -9,7 +9,7 @@ public class EnvironmentVariables {
         LinkedHashMap<String, String> browser_vars = getBrowserEnv();
         LinkedHashMap<String, String> server_vars = getServerEnv();
 
-        System.out.println("    <table>");
+        System.out.println("    <table border=\"1\">");
         System.out.println("      <tr>");
         System.out.println("        <th><b>Browser Vars</b></th>");
         System.out.println("        <th><b>Values</b></th>");
@@ -24,7 +24,7 @@ public class EnvironmentVariables {
 
         System.out.println("<br><br><br>");
 
-        System.out.println("    <table>");
+        System.out.println("    <table border=\"1\">");
         System.out.println("      <tr>");
         System.out.println("        <th><b>Server Vars</b></th>");
         System.out.println("        <th><b>Values</b></th>");
