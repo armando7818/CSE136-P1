@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+	<head>
+		<title>CGI Form</title>
+		<link rel="stylesheet" type="text/css" href="css/P1.css">
+		<script type="text/javascript" src = "js/P1.js"></script>
+	</head>
+	<body>
+		<section class = "format_section">
+			<h1>Post Request</h1>
+			<hr>
+			<form id = "postForm" method="Post">
+				<label>Name:
+					<input type="text" name="username">
+				</label>
+				<br>
+				<label>Password:
+					<input type="password" name="password">
+				</label>
+				<br>
+				<label>Magic Number:
+					<input type="text" name="magicnum">
+				</label>
+				<br>
+				<label>Language:
+					<select id = "postSelect" name="language">
+						<option selected value="" disabled="">Select Language</option>
+						<option value="php">php</option>
+						<option value="javascript">javascript</option>
+						<option value="java">java</option>
+						<option value="ruby">ruby</option>
+						<option value="python">Python</option>
+
+					</select>
+				</label>
+				<br>
+				<input type="submit" value="send">
+			</form>
+		</section>
+		<section class = "format_section">
+			<h1>Get Request</h1>
+			<hr>
+			<form id = "getForm" method="Get">
+				<label>Name:
+					<input type="text" name="username">
+				</label>
+				<br>
+				<label>Password:
+					<input type="password" name="password">
+				</label>
+				<br>
+				<label>Magic Number:
+					<input type="text" name="magicnum">
+				</label>
+				<br>
+				<label>Language:
+					<select id = "getSelect" name="language">
+						<option selected value="" disabled="">Select Language</option>
+						<option value="php">php</option>
+						<option value="javascript">javascript</option>
+						<option value="java">java</option>
+						<option value="ruby">ruby</option>
+						<option value="python">Python</option>
+
+					</select>
+				</label>
+				<br>
+				<input type="submit" value="send">
+			</form>
+		</section>
+	</body>
+</html>
