@@ -106,7 +106,7 @@ class CGIUtils {
         try {
 	    	printBody(user, pass, Integer.parseInt(num));
         } catch (NumberFormatException e) {
-            System.out.println("<body><p>magicnum isn't a number!</p></body>");
+            System.out.println("<body><p>magicnum isn't an integer!</p></body>");
         } catch (NullPointerException e) {
             System.out.println("<body><p>magicnum wasnt provided!</p></body>");
         }

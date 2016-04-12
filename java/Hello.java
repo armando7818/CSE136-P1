@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class Hello {
 	public static void printHtml() {
-		System.out.print("Content-type: text/html\n\n");
+		System.out.print("Content-type: text/html\r\n\r\n");
 		System.out.println("<!DOCTYPE html>");
 		System.out.println("<html lang=\"en\">");
 		printHead();
