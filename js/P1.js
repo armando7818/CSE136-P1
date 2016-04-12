@@ -25,7 +25,7 @@ window.onload=function() {
 	        document.getElementById(formID).action = "/java/processdata.cgi";
 	    }
 	    else if( language === "ruby"){
-		document.getElementById(formID).action='/ruby/getdata.rb';
+		document.getElementById(formID).action='/ruby/processdata.rb';
 	    }
 	    else if( language === "python"){
 		document.getElementById(formID).action='/python/processdata.py';
