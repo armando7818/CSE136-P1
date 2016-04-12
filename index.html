@@ -9,7 +9,7 @@
 		<section class = "format_section">
 			<h1>Post Request</h1>
 			<hr>
-			<form id = "postForm" method="Post">
+			<form action = "/php/processdata.php" id = "postForm" method="Post">
 				<label>Name:
 					<input type="text" name="username">
 				</label>
@@ -24,8 +24,7 @@
 				<br>
 				<label>Language:
 					<select id = "postSelect" name="language">
-						<option selected value="" disabled="">Select Language</option>
-						<option value="php">php</option>
+						<option selected value="php">php</option>
 						<option value="javascript">javascript</option>
 						<option value="java">java</option>
 						<option value="ruby">ruby</option>
@@ -40,7 +39,7 @@
 		<section class = "format_section">
 			<h1>Get Request</h1>
 			<hr>
-			<form id = "getForm" method="Get">
+			<form action = "/php/processdata.php" id = "getForm" method="Get">
 				<label>Name:
 					<input type="text" name="username">
 				</label>
@@ -55,8 +54,7 @@
 				<br>
 				<label>Language:
 					<select id = "getSelect" name="language">
-						<option selected value="" disabled="">Select Language</option>
-						<option value="php">php</option>
+						<option selected value="php">php</option>
 						<option value="javascript">javascript</option>
 						<option value="java">java</option>
 						<option value="ruby">ruby</option>

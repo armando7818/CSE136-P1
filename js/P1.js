@@ -19,7 +19,7 @@ window.onload=function() {
         	document.getElementById(formID).action = "/php/processdata.php";
 	    }
 	    else if( language == "javascript" ) {
-	        document.getElementById(formID).action = "/PLACEHOLDER";
+	        document.getElementById(formID).action = "/javascript_Sarkis/processdata.cgi";
 	    }
 	    else if( language == "java" ) {
 	        document.getElementById(formID).action = "/java/processdata.cgi";

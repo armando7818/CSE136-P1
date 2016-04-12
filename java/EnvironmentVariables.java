@@ -1,9 +1,8 @@
-import java.io.*;
 import java.util.*;
 
 public class EnvironmentVariables {
     public static void main(String[] args) {
-        printHtml("Env Vars");
+        printHtml("Environment Variables");
     }
 
     public static void printEnvironmentVariables() {
@@ -41,7 +40,7 @@ public class EnvironmentVariables {
 
     public static LinkedHashMap<String,String> getBrowserEnv() {
         LinkedHashMap<String,String> b = new LinkedHashMap<String,String>();
-
+        
         b.put("HTTP_ACCEPT", System.getProperty("http_accept"));
         b.put("HTTP_ACCEPT_ENCODING", System.getProperty("http_accept_encoding"));
         b.put("HTTP_ACCEPT_LANGUAGE", System.getProperty("http_accept_language"));
@@ -80,7 +79,6 @@ public class EnvironmentVariables {
         s.put("SERVER_PROTOCOL", System.getProperty("server_protocol"));
         s.put("SERVER_SIGNATURE", System.getProperty("server_signature"));
         s.put("SERVER_SOFTWARE", System.getProperty("server_software"));
-
         return s;
     }
 
@@ -94,7 +92,7 @@ public class EnvironmentVariables {
     }
 
     public static void printHeader() {
-        System.out.print("Content-type: text/html\n\n");
+        System.out.print("Content-type: text/html\r\n\r\n");
     }
 
     public static void printHead(String title) {
@@ -106,6 +104,7 @@ public class EnvironmentVariables {
 
     public static void printBody() {
         System.out.println("  <body>");
+        System.out.println("    <h1>Environment Variables</h1>");
         printEnvironmentVariables();
         System.out.println("  </body>");
     }
