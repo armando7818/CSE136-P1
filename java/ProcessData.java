@@ -103,7 +103,13 @@ class CGIUtils {
 		System.out.println("<!DOCTYPE html>");
 		System.out.println("<html lang=\"en\">");
 		printHead(title);
-		printBody(user, pass, Integer.parseInt(num));
+        try {
+	    	printBody(user, pass, Integer.parseInt(num));
+        } catch (NumberFormatException e) {
+            System.out.println("<body><p>magicnum isn't a number!</p></body>");
+        } catch (NullPointerException e) {
+            System.out.println("<body><p>magicnum wasnt provided!</p></body>");
+        }
 		System.out.println("</html>");
 	}
 
